@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background-color: #0b0d12;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(242, 183, 5, 0.07), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(51, 201, 176, 0.06), transparent 60%);
+}
+
+::selection {
+  background-color: rgba(242, 183, 5, 0.25);
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0d12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2430;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3140;
+}
+
+/* Reusable component classes */
+.section {
+  @apply mx-auto w-full max-w-content px-6 py-20 sm:px-8 lg:py-28;
+}
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.2em] text-teal;
+}
+
+.panel {
+  @apply rounded-xl border border-ink-line bg-ink-panel;
+}
+
+.chip {
+  @apply rounded-md border border-ink-line bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-paper-muted;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply btn bg-signal text-ink hover:bg-signal-soft;
+}
+
+.btn-outline {
+  @apply btn border border-ink-line bg-white/[0.02] text-paper hover:border-teal/50 hover:text-teal;
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease;
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+/* Blinking terminal cursor */
+.caret::after {
+  content: '\2588';
+  display: inline-block;
+  margin-left: 2px;
+  color: #f2b705;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Fade-up reveal used across sections */
+.reveal {
+  animation: fadeUp 0.7s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
