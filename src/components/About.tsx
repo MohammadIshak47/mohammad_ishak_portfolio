@@ -39,7 +39,7 @@ const About = () => {
                   B.Sc. Computer Science &amp; Engineering
                 </p>
                 <p className="text-sm text-paper-muted">
-                  Manarat International University, Dhaka · CGPA 3.59/4.00 · 2023
+                  Manarat International University, Dhaka · CGPA 3.51/4.00 · 2026
                 </p>
               </div>
             </div>
