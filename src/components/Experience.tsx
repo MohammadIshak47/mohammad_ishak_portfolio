@@ -17,8 +17,8 @@ const jobs: Job[] = [
   },
   {
     role: 'Full Stack Developer',
-    company: 'Goinnovoir IT (Remote)',
-    period: 'Feb 2024 — Dec 2024',
+    company: 'Excel IT AI LTD',
+    period: 'Sep 2023 — Sep 2024',
     points: [
       'Built and maintained full-stack features with Python (Django/FastAPI), React.js, and PostgreSQL, implementing REST APIs and JWT authentication for client-facing applications.',
       'Collaborated with product and engineering teams to define requirements and deliver working features on schedule.',
